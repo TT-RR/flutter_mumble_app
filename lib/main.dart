@@ -13,7 +13,7 @@ class MumbleApp extends StatelessWidget {
     return MaterialApp(
       // 右上に表示される"debug"ラベルを消す
       debugShowCheckedModeBanner: false,
-      title: 'My Todo App',
+      title: 'つぶやきノート',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -32,8 +32,8 @@ class MumbleListPage extends StatefulWidget {
 }
 
 class _MumbleListPageState extends State<MumbleListPage> {
-  // Todoリストのデータ
-  List<String> todoList = [];
+  // つぶやきリストのデータ
+  List<String> mumbleList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +43,13 @@ class _MumbleListPageState extends State<MumbleListPage> {
       ),
       // データを元にListViewを作成
       body: ListView.builder(
-        itemCount: todoList.length,
+        itemCount: mumbleList.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.all(3),
             child: Card(
               child: ListTile(
-                title: Text(todoList[index]),
+                title: Text(mumbleList[index]),
               ),
             ),
           );
@@ -69,7 +69,7 @@ class _MumbleListPageState extends State<MumbleListPage> {
             // キャンセルした場合は newListText が null となるので注意
             setState(() {
               // リスト追加
-              todoList.add(newListText);
+              mumbleList.add(newListText);
             });
           }
         },
