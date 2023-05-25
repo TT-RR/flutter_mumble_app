@@ -50,7 +50,14 @@ class _MumbleListPageState extends State<MumbleListPage> {
             child: Card(
               child: ListTile(
                 title: Text(mumbleList[index]),
+                trailing: IconButton(
+
+                  onPressed: () {},
+                    icon: Icon(Icons.favorite),
+                    color: Colors.pink,
+                )
               ),
+
             ),
           );
         },
